@@ -49,3 +49,14 @@ example :
 ```bash
 $ docker exec -it ca1a51ca9572 bash
 ```
+
+#4 - remove the container (Note that the container should be stopped)
+
+```bash
+$ docker container rm <container_name or ID>
+```
+
+#5 - remove the image
+```bash
+$ docker image rm <image_name or ID>
+```
