@@ -1,6 +1,6 @@
-# LAP1
+# Problem1 
 
-In this lab, we will perform the following tasks:
+In this problem, we will perform the following tasks:
 
 1. Run the container `hello-world`
 2. Check the container status
@@ -60,3 +60,43 @@ $ docker container rm <container_name or ID>
 ```bash
 $ docker image rm <image_name or ID>
 ```
+---
+
+# Problem 2
+in this problem, we will ilustrate the concept of mounting files in container
+1 - create a container from ubuntu image
+2 - touch a file in that image
+3 - exit and delete the container
+4 - look for the file, where is it?
+5 - create a container from the ubuntu image and mount a directory in it
+6 - touch the file
+7 - delete the container
+8 - look for the file and you will find it
+
+---
+## Steps : -
+
+### 1 - create the container and touch a file in it
+```bash
+$ docker pull ubuntu
+$ docker run -it ubuntu /bin/bash
+```
+
+### 2 - remove the file
+```bash
+$ docker container stop ca1a51ca9572
+$ docker container rm ca1a51ca9572
+```
+
+### 3 - create a container and make mount bind, touch the file in it(don't forget) 
+
+```bash
+$ docker container run -it --mount type=bind,src=/home/ezzat/orange_DevOps/orange_devOps/session_2/lap2,target=/lap2 ubuntu /bin/bash
+```
+
+### 4 - delete the container 
+```bash
+$ docker container stop 3fe0f2982ef4
+$ docker container rm 3fe0f2982ef4
+```
+
