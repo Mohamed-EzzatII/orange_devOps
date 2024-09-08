@@ -63,7 +63,8 @@ $ docker image rm <image_name or ID>
 ---
 
 # Problem 2
-in this problem, we will ilustrate the concept of mounting files in container
+in this problem, we will ilustrate the concept of mounting files in container : 
+
 1 - create a container from ubuntu image
 2 - touch a file in that image
 3 - exit and delete the container
