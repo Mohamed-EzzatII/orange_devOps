@@ -10,7 +10,7 @@ In this lab, we will perform the following tasks:
 
 ## Steps
 
-### 1. Run the container
+### 1- Run the container
 
 ```bash
 $ docker pull hello-world
@@ -48,4 +48,15 @@ $ docker exec -it <containerName or ID> bash
 example :
 ```bash
 $ docker exec -it ca1a51ca9572 bash
+```
+
+### 4 - remove the container (Note that the container should be stopped)
+
+```bash
+$ docker container rm <container_name or ID>
+```
+
+### 5 - remove the image
+```bash
+$ docker image rm <image_name or ID>
 ```
