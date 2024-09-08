@@ -65,14 +65,14 @@ $ docker image rm <image_name or ID>
 # Problem 2
 in this problem, we will ilustrate the concept of mounting files in container : 
 
-1 - create a container from ubuntu image
-2 - touch a file in that image
-3 - exit and delete the container
-4 - look for the file, where is it?
-5 - create a container from the ubuntu image and mount a directory in it
-6 - touch the file
-7 - delete the container
-8 - look for the file and you will find it
+1. create a container from ubuntu image
+2. touch a file in that image
+3. exit and delete the container
+4. look for the file, where is it?
+5. create a container from the ubuntu image and mount a directory in it
+6. touch the file
+7. delete the container
+8. look for the file and you will find it
 
 ---
 ## Steps : -
