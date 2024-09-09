@@ -12,19 +12,9 @@ Enter same passphrase again:
 Your identification has been saved in ssh_github
 Your public key has been saved in ssh_github.pub
 The key fingerprint is:
-SHA256:YAmKvgUFqUBJKPjRxx/ey0iVaBYcNSx2XAbyHkBDY0Y ezzatmohamed683@gmail.com
+---------- e---------------@gmail.com
 The key's randomart image is:
 +---[RSA 4096]----+
-|=++o.. =EB++o    |
-|=+o...o+O**o     |
-|=o.. .+* *o      |
-|o o  . .+...     |
-| . .   .So..     |
-|  o     . o      |
-| .               |
-|                 |
-|                 |
-+----[SHA256]-----+
 
 step 3 : add your ssh key to ssh agent 
 $ ssh-add YOUR_SSH_KEY_PATH
