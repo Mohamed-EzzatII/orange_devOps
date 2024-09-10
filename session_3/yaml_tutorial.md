@@ -15,8 +15,8 @@ YAML uses indentation to represent nested structures and relies on simple key-va
 - **Key-Value Pairs**: Each key-value pair is separated by a colon `:`. For example:
 
     ```yaml
-    name: John
-    age: 30
+    name: Mohamed 
+    age: 22
     ```
 
 - **Lists**: Lists are represented with a dash `-` followed by a space.
@@ -32,18 +32,18 @@ YAML uses indentation to represent nested structures and relies on simple key-va
 
     ```yaml
     person:
-      name: John
-      age: 30
+      name: Mohamed
+      age: 22
       address:
-        street: "123 Main St"
-        city: "New York"
+        street: "93 Elmosher Ahmed Ismail"
+        city: "Narges"
     ```
 
 - **Comments**: Comments are marked with `#`.
 
     ```yaml
     # This is a comment
-    name: John
+    name: Mohamed
     ```
 
 ---
@@ -56,24 +56,24 @@ YAML supports multiple data types:
 Strings are simple text values. You can define them without quotes, or use single or double quotes if necessary.
 
 ```yaml
-name: John  # Without quotes
-address: "123 Main St"  # Double quotes
-city: 'New York'  # Single quotes
+name: Mohamed  # Without quotes
+address: "93 Elmosher Ahmed Ismail"  # Double quotes
+city: 'Narges'  # Single quotes
 ```
 
 #### Numbers
 Numbers can be integers or floating-point values.
 
 ```yaml
-age: 30
-height: 5.9
+age: 22
+height: 1.72
 ```
 
 #### Booleans
 YAML supports boolean values, which are written as `true` or `false`.
 
 ```yaml
-is_student: false
+is_student: true
 ```
 
 #### Lists (Arrays)
@@ -90,10 +90,10 @@ You can also use lists of objects:
 
 ```yaml
 employees:
-  - name: John
-    age: 30
-  - name: Jane
-    age: 28
+  - name: Mohamed
+    age: 22
+  - name: Ezzat
+    age: 23
 ```
 
 #### Dictionaries (Maps)
@@ -101,11 +101,11 @@ Dictionaries are key-value pairs, and they can be nested.
 
 ```yaml
 person:
-  name: John
-  age: 30
+  name: Mohamed
+  age: 22
   address:
-    street: "123 Main St"
-    city: "New York"
+    street: "93 Elmosher Ahmed Ismail"
+    city: "Narges"
 ```
 
 ---
