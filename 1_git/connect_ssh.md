@@ -1,30 +1,39 @@
-source : https://www.geeksforgeeks.org/using-github-with-ssh-secure-shell/
+# Connect to your github repo using SSH
+In this readME file, i will explain how to connect to your github account using SSH .
 
-step1 : check for ssh key 
+### step1 : check for ssh key 
+```bash
 $ ls -al ~/.ssh
+```
+### step2 : generate one if there is not any ssh key exists
 
-step2 : generate one if there is not any ssh key exists
-$  ssh-keygen -t rsa -b 4096 -C "ezzatmohamed683@gmail.com" 
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/ezzat/.ssh/id_rsa): ssh_github
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in ssh_github
-Your public key has been saved in ssh_github.pub
-The key fingerprint is:
----------- e---------------@gmail.com
-The key's randomart image is:
-+---[RSA 4096]----+
-
-step 3 : add your ssh key to ssh agent 
-$ ssh-add YOUR_SSH_KEY_PATH
+```bash
+$  ssh-keygen -t rsa -b 4096 -C "exxxxxxxxxxxx3@gmail.com" 
+```
+### step 3 : add your private key to ssh agent 
+```bash
+$ ssh-add YOUR_PRIVATE_KEY_PATH
+```
 example:
-$ ssh-add /home/ezzat/orange_DevOps/1_git/ssh_github 
 
-Step 4: Add the SSH Key to your GitHub Account
+```bash
+$ ssh-add ~/ssh/ssh_github 
+```
 
-//copy the ssh key
+### Step 4: Copy the SSH public key
 xclip -sel clip < /home/ezzat/orange_DevOps/1_git/ssh_github.pub
 
-step 5 : open github and add it to your github account
+### step 5 : Open Your GitHub account and add the SSH public Key
+1. Open Settings
+![image](https://github.com/user-attachments/assets/4ff4b12c-eae4-4df4-a17c-3d5252ec8c39)
+
+2. Open SSH and GPG keys and select add SSH key
+![image](https://github.com/user-attachments/assets/5072d45c-862e-4c61-be4b-62838a99120a)
+
+3. Paste the copied public key and select the expire time, ALL DONE :)
+ 
+## source : -
+```http
+https://www.geeksforgeeks.org/using-github-with-ssh-secure-shell/
+```
 
