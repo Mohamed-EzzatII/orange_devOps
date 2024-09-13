@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oldweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oldweb
+  template:
+    metadata:
+      labels:
+        app: oldweb
+    spec:
+      containers:
+      - name: oldweb-container
+        image: nginx:latest  # Example image
+        ports:
+        - containerPort: 80

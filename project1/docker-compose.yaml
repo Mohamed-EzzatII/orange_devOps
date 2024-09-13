@@ -1,0 +1,39 @@
+version: "3"
+services:  
+  db:
+    volumes: 
+      - db-data:/var/lib/mysql
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD : example
+      MYSQL_DATABASE: example
+
+  proxy:
+    build: .
+    image: nginx_stage
+    ports:
+      - "443:443"
+    depends_on:
+      - backend
+    volumes:
+      - /etc/nginx/ssl/:/etc/nginx/ssl/
+  backend:
+    build: .
+    image : backend_stage
+    expose:
+      - "8000"
+    depends_on : 
+      - db
+    secrets:
+      - db-password
+
+
+secrets:
+  db-password:
+    file: ./db-password
+
+
+volumes:
+  db-data:
+    driver: local
+

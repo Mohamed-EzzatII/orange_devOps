@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multiportapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: multiportapp
+  template:
+    metadata:
+      labels:
+        app: multiportapp
+    spec:
+      containers:
+      - name: multiportappcontainer
+        image: nginx:latest  # You can use your own app image here
+        ports:
+        - containerPort: 80  # HTTP port
+        - containerPort: 443 # HTTPS port
