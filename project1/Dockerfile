@@ -1,27 +1,22 @@
-
-#######################################################
-# nginx proxy server create 
-#######################################################
-FROM nginx:alpine AS nginx_stage
-RUN apk add --no-cache openssl bash
-
-COPY ./nginx/generate-ssl.sh /
-
-RUN chmod +x generate-ssl.sh
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-
-CMD ["/bin/bash", "-c", "./generate-ssl.sh && nginx -g 'daemon off;'"]
-
-EXPOSE 443
-
-#######################################################
-# backend server create 
-#######################################################
-FROM golang:1.19 AS backend_stage
-
+# Stage 1: Build the Go binary
+FROM golang:1.18-alpine AS builder
 WORKDIR /app
 
-COPY ./backend .
+# Copy the Go module files and download dependencies
+COPY backend/go.mod backend/go.sum ./
 RUN go mod download
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /backend
+# Copy the entire source code and build the binary
+COPY backend/main.go ./
+RUN go build -o /go-backend
+
+# Stage 2: Create a lightweight image with just the binary
+FROM alpine:latest
+WORKDIR /root/
+
+# Copy the binary from the builder stage
+COPY --from=builder /go-backend .
+
+# Expose port 8000 and run the binary
+EXPOSE 8000
+CMD ["./go-backend"]

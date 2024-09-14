@@ -18,6 +18,7 @@ import (
 func connect() (*sql.DB, error) {
 	bin, err := ioutil.ReadFile("/run/secrets/db-password")
 	if err != nil {
+		fmt.Sprintf("error in file")
 		return nil, err
 	}
 	return sql.Open("mysql", fmt.Sprintf("root:%s@tcp(db:3306)/example", string(bin)))
