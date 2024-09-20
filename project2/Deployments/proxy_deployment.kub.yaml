@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  proxy-deployment
+  namespace: webapp
+  labels:
+    app:  proxy-deployment
+spec:
+  selector:
+    matchLabels:
+      app: proxy-pod
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app:  proxy-pod
+    spec:
+      containers:
+      - name:  proxy-cont
+        image:  mohamedezzatii/project_proxy
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort:  80
+          name:  proxy-port
