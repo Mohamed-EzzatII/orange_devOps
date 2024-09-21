@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  db-deployment
+  name:  db
   namespace: webapp
   labels:
-    app:  db-deployment
+    app:  db-dep
 spec:
   selector:
     matchLabels:
-      app: db-pod
+      app: db
   replicas: 1
   template: 
     metadata:
-      name: "db-pod"
+      name: "db"
       namespace: webapp
       labels:
-        app: "db-pod"
+        app: "db"
     spec:
       volumes:
         - name: db-data
@@ -33,11 +33,12 @@ spec:
               memory: 200Mi
           ports:
           - containerPort:  3306
+            protocol: TCP
           env:
+              - name: MYSQL_ROOT_PASSWORD
+                value: "0244"
               - name: MYSQL_DATABASE
                 value: "example"
-              - name: MYSQL_ROOT_PASSWORD
-                value: "1234"
           volumeMounts:
               - name: db-data
                 mountPath: "/var/lib/mysql"

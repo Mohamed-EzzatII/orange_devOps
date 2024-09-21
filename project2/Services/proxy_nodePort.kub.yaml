@@ -3,9 +3,11 @@ kind: Service
 metadata:
   name: nodeport-service
   namespace: webapp
+  labels:
+    app: proxy
 spec:
   selector:
-    app:  proxy-deployment
+    app:  proxy
   type: NodePort
   ports:
   - name: nodeport-port

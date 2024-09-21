@@ -1,13 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-db-service
+  name: backend
   namespace: webapp
+  labels:
+    app: backend
 spec:
   selector: 
-    app:  backend-deployment
+    app: backend
   type: ClusterIP
   ports:
-  - name: backend-port
+  - name: backend
+    protocol: TCP
     port: 8000
     targetPort: 8000
